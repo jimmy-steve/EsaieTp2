@@ -1,0 +1,570 @@
+
+package travauxperso;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @authorFrancis
+ */
+public class TravauxPerso {
+    
+    static void AffichagePaiement() {
+        Scanner sc = new Scanner(System.in);
+        
+        char rep ;
+        double monnaie ;
+        AffichageMenuPaiement();
+        
+        
+        String str = sc.nextLine();
+        str = str.toUpperCase();
+        rep = str.charAt(0);
+                            
+                                    
+                
+            
+            switch (rep) {
+                case 'C' -> {System.out.println("Voici votre Facture ");
+                AffichageFacture();
+                break;}
+            
+                case 'A' -> {
+                    System.out.println("Quelle est le montant que vous me donner ! ");
+                    int montant = sc.nextInt();
+                    System.out.println("Combien cela vous coûte ?");
+                    int paiement = sc.nextInt();
+                    if (paiement > montant) 
+                    {
+                        System.out.println(" Désolé, c'est insuffisant !");
+                    }
+                    else if (paiement == montant) 
+                    {
+                        System.out.println("Merci");
+                    }
+                    else
+                    { 
+                      monnaie = montant - paiement ; 
+                        System.out.println("Voici votre monnaie : "+ monnaie + " $ ");
+                        break;
+                    }
+            }
+                case 'Q' ->{ break;}      
+                default -> {break;
+                
+            }
+            }
+         
+}
+     static void AffichageFacture() {
+        char choixTitre = 'p';
+        
+        String str1 = String.valueOf(choixTitre);
+        double x = 2.50 ;
+        double tps = x*0.05;
+        double tvq = x*0.09975;
+        double pat = x + tps + tvq;
+        
+     
+        System.out.println(" - Catégorie : Titre");
+        System.out.println(" - Type : 1 "+ str1 + "assage");
+        System.out.println(" - Tarif : Enfant ");
+        System.out.println(" - ");
+        System.out.println(" - Prix initial : 3,50 $");
+        System.out.println(" - Prix à payer : 2,50 $");
+        System.out.println(" - TPS           " + tps);
+        System.out.println(" - TVQ           " + tvq);
+        System.out.println("-------------------------------------------------");
+        System.out.println(" - ");
+        System.out.println(" - Prix avec taxes :    " + pat);
+        System.out.println(" - ");
+     
+     }
+    
+    
+    
+    
+
+    
+    
+         static void AffichageMenuPassage() {
+     
+     
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez une catégorie de titre :       **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**    1  pour 1  passage        3.50 $         **");
+        System.out.println("**    2  pour 2  passages       6.50 $         **");
+        System.out.println("**    3  pour 10 passsages     30.00 $         **");
+        System.out.println("**    Q  poue Quitter                          **");
+        System.out.println("*************************************************");
+     
+     }
+     
+     
+     static void AffichageMenuAge() {
+     
+     
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez votre réduction :              **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**   1       enfant                            **");
+        System.out.println("**   2       Étudiant                          **");
+        System.out.println("**   3       + 65 ans                          **");
+        System.out.println("**   4       tarif ordinaire                   **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     
+     }
+     
+     static void AffichageMenuSoire() {
+     
+     
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez une catégorie de titre :       **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**   S       Soirée illimité (18h a 5h) 5.75 $ **");
+        System.out.println("**   J       Journée (24h)             10.00   **");
+        System.out.println("**   W       Keek-en illimité          14,50   **");
+        System.out.println("**   C        3 jours consécutifs      20,50   **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     
+     }
+     
+    
+     
+     static void AffichageMenuAbonnement() {
+     
+     
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez une catégorie de titre :       **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**   H       Hebdo (Lundi au dimanche) 28,00 $ **");
+        System.out.println("**   M       Mensuel                   90,50 $ **");
+        System.out.println("**   C       4 mois consécutif        212,00 $ **");
+        System.out.println("**                                             **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     
+     }
+     
+     
+     
+     static void AffichageMenuGroupe() {
+     
+     
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez une catégorie de titre :       **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**   G    1 adulte + 10 enfants de 6 à 13 ans  **");
+        System.out.println("**                                             **");
+        System.out.println("**                      19,00 $                **");
+        System.out.println("**                                             **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     
+     }
+     
+     
+     
+     static void AffichageMenuAutre() {
+     
+     
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez une catégorie de titre :       **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**   Y      Aéroport Mtl-Trudeau YUL  10,00 $  **");
+        System.out.println("**           (Valide 24h)                      **");
+        System.out.println("**   P      Passage 747 ouest         10,00 $  **");
+        System.out.println("**                                             **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     
+     }
+     
+     
+     
+     
+     
+
+    
+    static void AffichageMenu() {
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**   Catégorie des Titres de Transport:        **");
+        System.out.println("**   Choisissez une catégorie de titre :       **");
+        System.out.println("*************************************************");
+        System.out.println("**   P       Passage unique                    **");
+        System.out.println("**   S       Soirée : journée ou FDS           **");
+        System.out.println("**   C       Abonnement : hebdo, mensuel ou 4  **");
+        System.out.println("**   G       Groupe                            **");
+        System.out.println("**   A       Autre                             **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     }
+    
+    static void AffichageMenuPaiement() {
+        System.out.println("*************************************************");
+        System.out.println("**      Bienvenue à la STM                     **");
+        System.out.println("**                                             **");
+        System.out.println("**   Choisissez un mode de paiement :          **");
+        System.out.println("*************************************************");
+        System.out.println("**                                             **");
+        System.out.println("**   C       Paiement avec Carte               **");
+        System.out.println("**                                             **");
+        System.out.println("**   A       Paiement en Argent                **");
+        System.out.println("**                                             **");
+        System.out.println("**   Q       Quitter                           **");
+        System.out.println("*************************************************");
+     }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        double passage = 3.50, passageDeux = 6.50, passageDix = 30.00 ;
+        double passageEnfant = 2.50, passageDeuxEnfant = 4.25, passageDixEnfant = 19.00 ;
+        double passageAine = 1.00, passageDeuxAine = 2.0, passageDixAine = 9.00 ;
+        double soir = 5.75, journe = 10, fds = 14.50, troisJour = 20.50;
+        
+        double hebdo = 28, hebdoEnfant = 16.75, hebdoAine = 5.50;
+        double mensuel = 90.50, mensuelEnfant = 54, mensuelEtudiant = 54, mensuelAine = 27;
+        double quatreMois = 212, quatreMoisAine = 106;
+        double groupe = 19;
+        double yul = 10, passage747 = 10;
+        
+        double solde;
+        
+        
+        
+        char repG;
+        char choixAutre;
+        char choixTitreAbonnement;
+        char choixTitreSoir;
+        char tableauCaractere[] = {'P', 'S', 'C', 'G', 'A', 'Q', 'O'};
+        boolean trouve = false;
+        int i = 0;
+        char reponse = ' ',carac = ' ';
+        Scanner sc = new Scanner(System.in);
+
+    do {//Boucle principale
+        do {//On répète cette boucle tant que l'utilisateur n'a pas rentré une lettre figurant dans le tableau
+            i = 0;
+            AffichageMenu();
+            System.out.println("Veuillez choisir parmi les option ci-dessus");
+
+            carac = sc.nextLine().toUpperCase().charAt(0);
+                            //Boucle de recherche dans le tableau
+        while(i < tableauCaractere.length && carac != tableauCaractere[i])
+            i++;
+
+                        //Si i < 7 c'est que la boucle n'a pas dépassé le nombre de cases du tableau
+            if (i < tableauCaractere.length)
+                trouve = true;
+            else //Sinon
+                System.out.println("Veuillez entrer les bonne valeurs");
+
+    }while(i >= tableauCaractere.length);
+ //Tant que la lettre de l'utilisateur ne correspond pas à une lettre du tableau
+ 
+
+ 
+  
+ 
+ 
+ 
+ 
+ //do{
+ //System.out.println("Voulez-vous essayer à nouveau ? (O/N)");
+ //reponse = sc.nextLine().charAt(0);
+// }while(reponse != 'N' && reponse != 'O');
+}while (trouve == false);
+
+
+
+
+ switch (carac) {
+            case 'Q' :
+                
+                break;
+            case 'P' :
+                //choixTitre = "1 passage";
+                AffichageMenuPassage();
+                System.out.println("Choisissez le type de titre : ");
+                int rep = sc.nextInt();
+                
+                AffichageMenuAge();
+                System.out.println("Choisissez votre type de réduction : ");
+                rep = sc.nextInt();
+                switch (rep){
+                    case 1 :
+                        System.out.println(" 3,50 - 1 = 2.50 $ $");
+                        solde = passageEnfant;
+                        System.out.println("voici votre solde "+ solde);
+                        
+                        // début paiement
+                       
+                        //AffichagePaiement();
+                        
+                        //fin paiement
+                        
+                        break;
+                        
+                    case 2 :
+                        solde = passage;
+                        System.out.println("voici votre solde "+ solde);
+                        break;
+                        
+                    case 3 :
+                        solde = passageAine;
+                        System.out.println("voici votre solde "+ solde);
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+                
+                break;
+
+             case 'S' :
+                AffichageMenuSoire();
+                System.out.println("Choisissez le type de titre : ");
+                String rep1 = sc.nextLine();
+                rep1 = rep1.toUpperCase();
+                choixTitreSoir = rep1.charAt(0);
+                 switch (choixTitreSoir) {
+                     case 'S':
+                        solde = soir;
+                        System.out.println("voici votre solde "+ solde);
+                         break;
+                     case 'J':
+                        solde = journe;
+                        System.out.println("voici votre solde "+ solde);
+                         break;
+                     case 'W':
+                        solde = fds;
+                        System.out.println("voici votre solde "+ solde);
+                         break;
+                     case 'C':
+                        solde = troisJour;
+                        System.out.println("voici votre solde "+ solde);
+                         break;
+                     case 'Q':
+                        
+                         break;    
+                     default:
+                         throw new AssertionError();
+                 }
+                 
+                 
+                 // ---------------------retravaille facture avec nouvelle variable
+                //AffichageFacture();
+                
+                
+                break;
+                /// choixTire = Abonnement -----------------
+            case 'C' :
+                AffichageMenuAbonnement();
+                System.out.println("Choisissez le type de titre : ");
+                String rep2 = sc.nextLine();
+                rep2 = rep2.toUpperCase();
+                choixTitreAbonnement = rep2.charAt(0);
+                //AffichageMenuAge();
+                //System.out.println("Choisissez votre type de réduction : ");
+                //break;
+                
+                switch (choixTitreAbonnement) {
+                    
+                // menu age à l'intérieur de la bouche abonnement 
+                     case 'H':
+                        AffichageMenuAge();
+                        System.out.println("Choisissez votre type de réduction : ");
+                        rep = sc.nextInt();
+                        switch (rep){
+                            case 1 :
+                                //System.out.println(" 3,50 - 1 = 2.50 $ $");
+                                solde = hebdoEnfant;
+                                System.out.println("voici votre solde "+ solde);
+                        
+                                    
+                                    break;
+                        
+                            case 2 :
+                                solde = hebdo;
+                                System.out.println("voici votre solde "+ solde);
+                                 break;
+                        
+                            case 3 :
+                                solde = hebdoAine;
+                                System.out.println("voici votre solde "+ solde);
+                                break;
+                                default:
+                                    throw new AssertionError();
+                }
+                // menu age à l'intérieur de la bouche abonnement mensuel
+                //break;
+                        
+                         break;
+                     case 'M':
+                        AffichageMenuAge();
+                        System.out.println("Choisissez votre type de réduction : ");
+                        rep = sc.nextInt();
+                        switch (rep){
+                            case 1 :
+                                //System.out.println(" 3,50 - 1 = 2.50 $ $");
+                                solde = mensuelEnfant;
+                                System.out.println("voici votre solde "+ solde);
+                        
+                                    
+                                    break;
+                        
+                            case 2 :
+                                solde = mensuelEtudiant;
+                                System.out.println("voici votre solde "+ solde);
+                                 break;
+                        
+                            case 3 :
+                                solde = mensuelAine;
+                                System.out.println("voici votre solde "+ solde);
+                                break;
+                            case 4 :
+                                solde = mensuel;
+                                System.out.println("voici votre solde "+ solde);
+                                break;    
+                                
+                                default:
+                                    throw new AssertionError();
+                        }
+                     case 'C':
+                        AffichageMenuAge();
+                        System.out.println("Choisissez votre type de réduction : ");
+                        rep = sc.nextInt();
+                        switch (rep){
+                            case 1 :
+                                //System.out.println(" 3,50 - 1 = 2.50 $ $");
+                                solde = quatreMois;
+                                System.out.println("voici votre solde "+ solde);
+                        
+                                    
+                                    break;
+                        
+                            case 2 :
+                                solde = quatreMois;
+                                System.out.println("voici votre solde "+ solde);
+                                 break;
+                        
+                            case 3 :
+                                solde = quatreMoisAine;
+                                System.out.println("voici votre solde "+ solde);
+                                break;
+                            case 4 :
+                                solde = quatreMois;
+                                System.out.println("voici votre solde "+ solde);
+                                break;    
+                                
+                                default:
+                                    throw new AssertionError();               
+                                    
+                                    
+                                            
+                        }
+                
+                            break;
+                        
+                        
+                }
+                break;//-------------------------menu C terminer du menu principal------------
+                        
+                        
+                        
+                       
+                // ---------------------menu Groupe -----------------------------
+            case 'G':
+                        AffichageMenuGroupe();
+                        
+                        System.out.println("Choisissez le type de titre : ");
+                        String repGroupe = sc.nextLine();
+                        repGroupe = repGroupe.toUpperCase();
+                        repG = repGroupe.charAt(0);
+                        switch (repG){
+                            case 'G' :
+                                //System.out.println(" 3,50 - 1 = 2.50 $ $");
+                                solde = groupe;
+                                System.out.println("voici votre solde "+ solde);
+                                    break;
+                            case 'Q' :
+                                 break;
+                            default:
+                                      throw new AssertionError();
+                        }
+
+                        break;
+                     
+                     
+                
+      
+                
+                // Dernier cas --------------------- autre---------------
+                
+            case 'A' :
+                AffichageMenuAutre();
+                System.out.println("Choisissez le type de titre : ");
+                String rep4 = sc.nextLine();
+                rep4 = rep4.toUpperCase();
+                choixAutre = rep4.charAt(0);
+                switch (choixAutre) {
+                    case 'Y':
+                        solde = yul;
+                        System.out.println("voici votre solde "+ solde);
+                        break;
+                    case 'P':
+                        solde = passage747;
+                        System.out.println("voici votre solde "+ solde);
+                        break;    
+                    default:
+                        throw new AssertionError();
+                }
+                break;
+                
+                
+            default:
+                System.out.println("SVP faite un choix parmis la sélection"); 
+                
+        }
+        
+         
+
+
+
+
+
+
+
+
+
+ 
+
+System.out.println("Au revoir !");
+        
+    }//fin main
+    
+}//fin class
